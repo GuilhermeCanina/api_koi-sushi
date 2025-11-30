@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "vercel-build": "echo 'No build step needed'"
+       "postinstall": "prisma migrate dev --name init && prisma generate",
+      "dev" : "nodemon server.js"
   },
   "dependencies": {
     "@prisma/client": "^6.14.0",
